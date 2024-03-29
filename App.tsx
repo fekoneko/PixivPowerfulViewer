@@ -1,34 +1,28 @@
 import { SafeAreaView, View, useWindowDimensions } from 'react-native-windows';
 import Header from './src/components/layout/Header';
 import colors from './src/styles/colors';
-import WorkPreview from './src/components/layout/WorkPreview';
-import WorkSelector from './src/components/layout/WorkSelector';
+import WorkViewer from './src/components/layout/WorkViewer.tsx/WorkViewer';
+import { CollectionProvider } from './src/contexts/CollectionContext';
 
 const App = () => {
   const windowDimensions = useWindowDimensions();
 
   return (
-    <SafeAreaView
-      style={{
-        display: 'flex',
-        width: windowDimensions.width,
-        height: windowDimensions.height,
-        backgroundColor: colors.background,
-      }}
-    >
-      <Header />
-      <View
+    <CollectionProvider>
+      <SafeAreaView
         style={{
-          flexGrow: 1,
           display: 'flex',
-          flexDirection: 'row',
-          paddingHorizontal: windowDimensions.width / 10,
+          width: windowDimensions.width,
+          height: windowDimensions.height,
+          backgroundColor: colors.background,
         }}
       >
-        <WorkSelector />
-        <WorkPreview />
-      </View>
-    </SafeAreaView>
+        <Header />
+        <View style={{ flexBasis: 0, flexGrow: 1 }}>
+          <WorkViewer />
+        </View>
+      </SafeAreaView>
+    </CollectionProvider>
   );
 };
 

@@ -8,11 +8,11 @@ It was made specifically for my needs, and because I really don't know how to sp
 
 ## Ugly patches
 
-> **Important!** Before build go to `node_modules/react-native-document-picker/windows` and change min target UAP version on .vcxbroj to 10.0.17763!
+> **Important!** Before build go to `node_modules/react-native-document-picker/windows` and change min target UAP version on .vcxproj to 10.0.17763
 > [Here's the issue](https://github.com/react-native-documents/document-picker/issues/562#issuecomment-1612406307)
 
-> Also, I modified _@dr.pogodin\react-native-fs package\_ based on [another fork](https://github.com/wwimmo/react-native-fs/blob/fixUmlautePaths) to make it wirk with non-latin filenames.
-> The solution is not tested on something other than this project, so I hope will be temporary.
+> Also, I modified @dr.pogodin\react-native-fs package based on [another fork](https://github.com/wwimmo/react-native-fs/blob/fixUmlautePaths) to make it wirk with non-latin filenames.
+> The solution is not tested on something other than this project, so I hope it will be temporary.
 
 - Go to `node_modules\@dr.pogodin\react-native-fs\windows\ReactNativeFs\ReactNativeModule.cpp`
 - Paste the following code there:
