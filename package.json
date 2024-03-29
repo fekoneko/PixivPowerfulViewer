@@ -11,8 +11,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@dr.pogodin/react-native-fs": "^2.24.2",
     "react": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-document-picker": "^9.1.1",
     "react-native-windows": "0.73.11"
   },
   "devDependencies": {
