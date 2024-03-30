@@ -1,11 +1,9 @@
-import { Text, View, useWindowDimensions } from 'react-native-windows';
+import { Text, View } from 'react-native-windows';
 import Searchbar from './Searchbar';
 import colors from '../../../styles/colors';
 import CollectionSelector from './CollectionSelector';
 
 const Header = () => {
-  const windowDimensions = useWindowDimensions();
-
   return (
     <View
       style={{
@@ -14,7 +12,7 @@ const Header = () => {
         alignItems: 'center',
         gap: 10,
         backgroundColor: colors.primary,
-        paddingHorizontal: windowDimensions.width / 10,
+        paddingHorizontal: '10%',
         paddingVertical: 10,
       }}
     >

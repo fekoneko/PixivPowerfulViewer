@@ -9,10 +9,10 @@ const Searchbar = () => {
         padding: 9.5,
         borderColor: 'white',
         borderRadius: 5,
-        backgroundColor: 'transparent',
+        backgroundColor: '#ffffff0d',
         color: colors.textAccent,
       }}
-      placeholderTextColor={colors.textAccent}
+      placeholderTextColor="#ffffffcc"
       placeholder="Search tags"
     />
   );

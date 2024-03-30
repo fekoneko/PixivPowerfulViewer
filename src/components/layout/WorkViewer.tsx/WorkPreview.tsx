@@ -7,8 +7,9 @@ const WorkPreview = () => {
       style={{
         flexBasis: 0,
         flexGrow: 5,
-        margin: 5,
+        marginVertical: 20,
         borderWidth: 1,
+        borderColor: '#ffffff44',
         borderRadius: 5,
       }}
     ></View>

@@ -1,7 +1,7 @@
 const colors = {
   primary: '#0096fa',
   background: '#333344',
-  text: '#ccccee',
+  text: '#ccccdd',
   textAccent: '#ffffff',
 };
 export default colors;

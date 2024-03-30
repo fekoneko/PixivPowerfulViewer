@@ -27,7 +27,7 @@ export interface Work {
   dimensions?: { h: number; v: number };
   bookmarks?: number;
   dateTime?: Date;
-  assets?: WorkAsset[];
+  images?: WorkAsset[];
 }
 
 export type OnUpdate = (works: Work[]) => any;
@@ -148,19 +148,35 @@ export default class Collection {
       size: rawAsset.size,
     }));
 
-    const metaAsset = assets.find((asset) => /-meta\.txt$/.test(asset.name));
+    const images = assets
+      .filter((asset) =>
+        /\.jpg$|\.png$|\.gif$|\.webm$|\.webp$|\.apng$/.test(
+          asset.name.toLowerCase(),
+        ),
+      )
+      .sort((leftAsset, rigthAsset) => {
+        const [, leftPage] = Collection.splitIntoNameAndId(leftAsset.name);
+        const [, rightPage] = Collection.splitIntoNameAndId(rigthAsset.name);
+        if (leftPage === undefined || rightPage === undefined) return 0;
+        return leftPage - rightPage;
+      });
+
+    const metaAsset = assets.find((asset) =>
+      /-meta\.txt$/.test(asset.name.toLowerCase()),
+    );
+
     if (metaAsset === undefined) {
       const [title, id] = Collection.splitIntoNameAndId(workDirectory.name);
       const [userName, userId] = Collection.splitIntoNameAndId(
         userDirectory.name,
       );
-      const work: Work = { id, userId, userName, title, assets };
+      const work: Work = { id, userId, userName, title, images };
       return work;
     } else {
       const workData = await this.getWorkDataFromMetaFile(metaAsset.path);
       return {
         ...workData,
-        assets,
+        images,
       };
     }
   }

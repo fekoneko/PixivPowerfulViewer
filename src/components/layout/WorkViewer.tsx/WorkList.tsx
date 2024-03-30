@@ -1,9 +1,9 @@
-import { ScrollView, Text } from 'react-native-windows';
+import { ScrollView } from 'react-native-windows';
 import useWorks from '../../../hooks/useWorks';
-import colors from '../../../styles/colors';
 import { memo } from 'react';
+import WorkCard from './WorkCard';
 
-const WorkSelector = () => {
+const WorkList = () => {
   const works = useWorks();
 
   return (
@@ -13,11 +13,9 @@ const WorkSelector = () => {
       style={{ flexBasis: 0, flexGrow: 3 }}
     >
       {works.map((work) => (
-        <Text key={work.id} style={{ color: colors.text }}>
-          {work.title}
-        </Text>
+        <WorkCard key={work.id} work={work} />
       ))}
     </ScrollView>
   );
 };
-export default memo(WorkSelector);
+export default memo(WorkList);
