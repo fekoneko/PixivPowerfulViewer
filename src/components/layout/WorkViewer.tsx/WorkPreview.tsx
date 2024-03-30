@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { View } from 'react-native';
 
 const WorkPreview = () => {
@@ -13,4 +14,4 @@ const WorkPreview = () => {
     ></View>
   );
 };
-export default WorkPreview;
+export default memo(WorkPreview);

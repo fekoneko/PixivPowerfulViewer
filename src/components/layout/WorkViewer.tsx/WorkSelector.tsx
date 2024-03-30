@@ -1,6 +1,7 @@
 import { ScrollView, Text } from 'react-native-windows';
 import useWorks from '../../../hooks/useWorks';
 import colors from '../../../styles/colors';
+import { memo } from 'react';
 
 const WorkSelector = () => {
   const works = useWorks();
@@ -19,4 +20,4 @@ const WorkSelector = () => {
     </ScrollView>
   );
 };
-export default WorkSelector;
+export default memo(WorkSelector);
