@@ -66,4 +66,4 @@ yarn-error.log
 /coverage
 
 # VS Code
-.vscode
+.vscode/
