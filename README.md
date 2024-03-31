@@ -1,5 +1,7 @@
 # Pixiv Powerful Viewer
 
+> This project is abandoned. I will try and find more elegant solution for this than this bulky UWP app.
+
 ## Description
 
 This app allows you to view and search collection saved by _Pixiv Powerful Downloader browser extension_ locally.
