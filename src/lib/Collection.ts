@@ -243,7 +243,7 @@ export default class Collection {
       },
     ],
     ['Title', { key: 'title' }],
-    ['Description', { key: 'description' }],
+    ['Description', { key: 'description' }], // TODO: Parse multiline description correctly
     [
       'Tags',
       {
