@@ -1,6 +1,6 @@
 # Pixiv Powerful Viewer
 
-> This project is abandoned. I will try and find more elegant solution for this than this bulky UWP app.
+> I moved this pproject to Electron now -> [here is the link](https://github.com/fekoneko/pixiv-powerful-viewer)
 
 ## Description
 
